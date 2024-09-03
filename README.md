@@ -18,11 +18,10 @@
 
 <br />
 
-GraphQLEditor makes it easier to understand GraphQL schemas. Create a schema by using visual blocks system. GraphQL Editor will transform them into code.
+<h4>GraphQL Editor is a GraphQL reader, visualizer and designer for schemas. It allows you to create and display GraphQL schemas as a visual graph.</h4>
 
-With GraphQL Editor you can create visual diagrams without writing any code or present your schema in a nice way!
 
-<h4>GraphQL Editor is Graph based system for reading and designing the GraphQL schema</h4>
+GraphQLEditor makes it easier to understand GraphQL schemas. The Editor lets you create a schema using a visual blocks system. GraphQL Editor then transforms them into code for you. This lets you skip writing any code and present your schema in a visually-striking way!
 
 > GraphQL Editor is a GraphQL visualizer and designer. It allows you to create and display GraphQL schemas as a visual graph.
 
@@ -53,23 +52,29 @@ With GraphQL Editor you can create visual diagrams without writing any code or p
 
 ## How It Works
 
-Create GraphQL nodes and connect them to generate a database schema. You can also use builtin text IDE with GraphQL syntax validation
+Create GraphQL nodes and connect them to generate a database schema. You can also use builtin text IDE with GraphQL syntax validation.
+
+<br />
+
+> [!IMPORTANT]
+> GraphQL-Editor parsing is based on underlying [Zeus](https://github.com/graphql-editor/graphql-zeus) technology.
 
 <br />
 
 ## 🚀 Features
 
-- Visual GraphQL Editing.
-- GraphQL Monaco based IDE
-- Selection observer. When node is clicked in visual Graph it automatically scrolls the code to the same node. When cursor is moved in code space
-- Automatically bound interfaces. When interface is implemented on type fields of the interface add to the type. If it is already implemented editing interface edits all implementing nodes
+- Visual GraphQL Editing
+- GraphQL Monaco-based IDE
+- Selection observer - when a node is clicked in visual Graph, it automatically scrolls the code to the same node. <!-- unfinished sentence: When cursor is moved in code space-->
+- Automatically bound interfaces - when interface is implemented on type fields of the interface add to the type. If it is already implemented editing interface edits all implementing nodes
 - Writing,generating and displaying GraphQL Documentation in markdown. Generating GraphQL docs out of GraphQL descriptions in markdown
-- Comparing different versions of GraphQL schemas with special node-sort sorting nodes and its fields to show the real difference in GraphQL Schema on AST omitting line numbers
+- Comparing different versions of GraphQL schemas - with special node-sort nodes and its fields to show the real difference in GraphQL Schema on AST without getting distracted by line numbers
 
 <br />
 
 ## Installation
 
+To install, you need to add the below lines of code at the beginning:
 ```
 npm i -D worker-loader css-loader file-loader webpack
 ```
@@ -139,15 +144,15 @@ render(<App />, document.getElementById('root'));
 
 | property      | type                                                  | description                                                                            | required | default   |
 | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------- | -------- | --------- |
-| schema        | `PassedSchema`                                        | value of the schema                                                                    | true     |           |
-| setSchema     | `(props: PassedSchema, isInvalid?: boolean) => void;` | Function to be called when schema is set by the editor                                 | true     |           |
-| readonly      | `boolean`                                             | lock editing                                                                           | false    | false     |
-| diffSchemas   | `Record<string, string>`                              | Record containing graphql schemas with "name" as a key and graphql schema as a "value" | false    |           |
-| theme         | `EditorTheme`                                         | current theme                                                                          |          | MainTheme |
-| routeState    | `EditorRoutes`                                        | listen to route changes. Don't bind it with routeState though!                         | false    |           |
-| onStateChange | `( r: EditorRoutes ) => void;`                        | on route state changed                                                                 | false    |           |
-| onTreeChange  | `(tree: ParserTree) => void`                          | Function that could be fired if tree changes                                           | false    |           |
-| placeholder   | `string`                                              | placeholder - empty editor                                                             | false    |           |
+| schema        | `PassedSchema`                                        | value of the schema                                                                    | yes      |           |
+| setSchema     | `(props: PassedSchema, isInvalid?: boolean) => void;` | Function to be called when schema is set by the editor                                 | yes      |           |
+| readonly      | `boolean`                                             | lock editing                                                                           | no       | false     |
+| diffSchemas   | `Record<string, string>`                              | Record containing graphql schemas with "name" as a key and graphql schema as a "value" | no       |           |
+| theme         | `EditorTheme`                                         | current theme                                                                          | --       | MainTheme |
+| routeState    | `EditorRoutes`                                        | listen to route changes. Don't bind it with routeState though!                         | no       |           |
+| onStateChange | `( r: EditorRoutes ) => void;`                        | on route state changed                                                                 | no       |           |
+| onTreeChange  | `(tree: ParserTree) => void`                          | Function that could be fired if tree changes                                           | no       |           |
+| placeholder   | `string`                                              | placeholder - empty editor                                                             | no       |           |
 
 
 <br />
@@ -216,12 +221,12 @@ render(<App />, document.getElementById('root'));
 
 | property    | type                                                  | description                | required | default   |
 | ----------- | ----------------------------------------------------- | -------------------------- | -------- | --------- |
-| schema      | `PassedSchema`                                        | value of the schema        | true     |           |
-| gql         | `string`                                              | value of the gql           | true     |           |
-| placeholder | `string`                                              | placeholder - empty editor | false    | undefined |
-| setGql      | `(props: PassedSchema, isInvalid?: boolean) => void;` | set value of the gql       | true     | undefined |
-| readonly    | `boolean`                                             | lock editing               | false    | false     |
-| theme       | `EditorTheme`                                         | current theme              | false    | MainTheme |
+| schema      | `PassedSchema`                                        | value of the schema        | yes      |           |
+| gql         | `string`                                              | value of the gql           | yes      |           |
+| placeholder | `string`                                              | placeholder - empty editor | no       | undefined |
+| setGql      | `(props: PassedSchema, isInvalid?: boolean) => void;` | set value of the gql       | yes      | undefined |
+| readonly    | `boolean`                                             | lock editing               | no       | false     |
+| theme       | `EditorTheme`                                         | current theme              | no       | MainTheme |
 
 
 <br />
@@ -263,9 +268,15 @@ export const embeddedEditor = () => {
 
 ## MORE INFO
 
-## Support
+## <span><img src="https://github.com/user-attachments/assets/08ae59a6-2ec2-4c12-855c-f44f039ef221" width=24px></span>&nbsp;&nbsp;Support
 
-For support and help, join our [Discord Channel](https://discord.gg/wVcZdmd).
+For instant support and help, join our [Discord Channel](https://discord.gg/wVcZdmd).
+
+To learn more about how to make the most of GraphQL, we recommend:
+- [Interactive GraphQL Tutorial](https://app.graphqleditor.com/?step=intro)
+- [GraphQL Blog](https://blog.graphqleditor.com/)
+
+<br />
 
 ## <span><img src="https://github.com/user-attachments/assets/3a9c2be0-99dc-4a91-a506-834022adccae" width=24px></span>&nbsp;&nbsp;About Us
 
@@ -276,20 +287,4 @@ We are devs and contributors to the GraphQL ecosystem with a lot of experience. 
 - [Artur Czemiel](https://github.com/aexol)
 - [GraphQL Editor](https://graphqleditor.com)
 - [Aexol](https://aexol.com)
-
-<br />
-
-## Underlying Parsing Technology
-
-GraphQL-Editor parsing is based on underlying [Zeus](https://github.com/graphql-editor/graphql-zeus) technology.
-
-<br />
-
-## GraphQL Tutorials
-
-To learn more about how to use GraphQL, we recommend:
-
-- [Interactive GraphQL Tutorial](https://app.graphqleditor.com/?step=intro)
-- [GraphQL Blog](https://blog.graphqleditor.com/)
-
-<br />
+  
