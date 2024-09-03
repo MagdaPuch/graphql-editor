@@ -26,11 +26,9 @@ GraphQLEditor makes it easier to understand GraphQL schemas. The Editor lets you
 
 ## Table of contents
 
-- [How it works](#how-it-works)
-- [💡 What is GraphQL Editor?](#-what-is-graphql-editor)
-- [🚀 Features](#-features)
 - [Table of contents](#table-of-contents)
-- [License](#license)
+- [How it works](#how-it-works)
+- [Features](#features)
 - [Installation](#installation)
 - [GraphQL SDL Editor](#graphql-sdl-editor)
   - [Usage](#usage)
@@ -39,11 +37,9 @@ GraphQLEditor makes it easier to understand GraphQL schemas. The Editor lets you
   - [Usage](#usage-1)
   - [GraphQLGqlEditor component props](#graphqlgqleditor-component-props)
   - [GraphQL Embedded Readonly Editor](#graphql-embedded-readonly-editor)
-- [Support](#support)
-- [Team](#team)
-- [Underlying Parsing technology](#underlying-parsing-technology)
-- [GraphQL Tutorials](#graphql-tutorials)
-- [Authors](#authors)
+- [More Info](#MORE-INFO)
+  - [Support](#support)
+  - [Credits](#credits)
 
 <br />
 
@@ -58,15 +54,17 @@ Create GraphQL nodes and connect them to generate a database schema. You can als
 
 <br />
 
-## 🚀 Features
+## <span><img src="https://github.com/user-attachments/assets/692d789b-14c6-4d12-be23-530c41a65000" width=24px></span>&nbsp;&nbsp;Features
 
-- Visual GraphQL Editing
-- GraphQL Monaco-based IDE
-- Selection observer - when a node is clicked in visual Graph, it automatically scrolls the code to the same node <!-- unfinished sentence: When cursor is moved in code space-->
-- Automatically bound interfaces - when interface is implemented on type fields of the interface add to the type. If it is already implemented editing interface edits all implementing nodes
-- Writing,generating and displaying GraphQL Documentation in markdown
-- Generating GraphQL docs out of GraphQL descriptions in markdown
-- Comparing different versions of GraphQL schemas - with special node-sort nodes and its fields to show the real difference in GraphQL Schema on AST without getting distracted by line numbers
+| Feature   | Description                    |
+| --------- | ------------------------------ |
+| Visual GraphQL Editing     | --       |
+| GraphQL Monaco-based IDE | -- |
+| Selection observer | when a node is clicked on a visual Graph, it automatically scrolls to the same node within the code |
+| Automatically bound interfaces | when an interface is implemented on type fields, it adds to the type; if it is already implemented, editing the interface alters all the existent nodes |
+| Organizing GraphQL Documentation | writes, generates, and displays the documentation in Markdown |
+| Generating GraphQL docs | generates GraphQL documents out of GraphQL descriptions in Markdown |
+| Comparing different versions of GraphQL schemas | when wanting to see the real difference in GraphQL Schema on AST without getting distracted by line numbers, it uses special node-sort nodes and its fields to make the experience more approachable | 
 
 <br />
 
