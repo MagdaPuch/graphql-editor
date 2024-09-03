@@ -65,9 +65,10 @@ Create GraphQL nodes and connect them to generate a database schema. You can als
 
 - Visual GraphQL Editing
 - GraphQL Monaco-based IDE
-- Selection observer - when a node is clicked in visual Graph, it automatically scrolls the code to the same node. <!-- unfinished sentence: When cursor is moved in code space-->
+- Selection observer - when a node is clicked in visual Graph, it automatically scrolls the code to the same node <!-- unfinished sentence: When cursor is moved in code space-->
 - Automatically bound interfaces - when interface is implemented on type fields of the interface add to the type. If it is already implemented editing interface edits all implementing nodes
-- Writing,generating and displaying GraphQL Documentation in markdown. Generating GraphQL docs out of GraphQL descriptions in markdown
+- Writing,generating and displaying GraphQL Documentation in markdown
+- Generating GraphQL docs out of GraphQL descriptions in markdown
 - Comparing different versions of GraphQL schemas - with special node-sort nodes and its fields to show the real difference in GraphQL Schema on AST without getting distracted by line numbers
 
 <br />
@@ -154,9 +155,7 @@ render(<App />, document.getElementById('root'));
 | onTreeChange  | `(tree: ParserTree) => void`                          | Function that could be fired if tree changes                                           | no       |           |
 | placeholder   | `string`                                              | placeholder - empty editor                                                             | no       |           |
 
-
 <br />
-
 
 **PassedSchema**
 
@@ -234,7 +233,7 @@ render(<App />, document.getElementById('root'));
 
 ### GraphQL Embedded Readonly Editor
 
-If you only want to view the schema and embed it somewhere in your app you can use our embedded editor for that reason
+The embedded editor can be used to view a schema and include it in your app. 
 
 ```tsx
 import React from 'react';
@@ -278,11 +277,7 @@ To learn more about how to make the most of GraphQL, we recommend:
 
 <br />
 
-## <span><img src="https://github.com/user-attachments/assets/3a9c2be0-99dc-4a91-a506-834022adccae" width=24px></span>&nbsp;&nbsp;About Us
-
-We are devs and contributors to the GraphQL ecosystem with a lot of experience. We want to enter Vendure to create developer-friendly e-commerce solutions that don't rely on clunky and outdated stuff like Shopify's Liquid wrapped with JavaScript.
-
-**Authors:**
+## <span><img src="https://github.com/user-attachments/assets/3a9c2be0-99dc-4a91-a506-834022adccae" width=24px></span>&nbsp;&nbsp;Credits
 
 - [Artur Czemiel](https://github.com/aexol)
 - [GraphQL Editor](https://graphqleditor.com)
