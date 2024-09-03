@@ -86,7 +86,7 @@ npm i  graphql-editor react react-dom monaco-editor @monaco-editor/react
 
 <br />
 
-## GraphQL SDL Editor
+## GRAPHQL SDL EDITOR
 
 ### Usage
 
@@ -172,7 +172,7 @@ render(<App />, document.getElementById('root'));
 
 <br />
 
-## GraphQL Gql Editor
+## GRAPHQL GQL EDITOR
 
 ### Usage
 
