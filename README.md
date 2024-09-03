@@ -20,10 +20,7 @@
 
 <h4>GraphQL Editor is a GraphQL reader, visualizer and designer for schemas. It allows you to create and display GraphQL schemas as a visual graph.</h4>
 
-
 GraphQLEditor makes it easier to understand GraphQL schemas. The Editor lets you create a schema using a visual blocks system. GraphQL Editor then transforms them into code for you. This lets you skip writing any code and present your schema in a visually-striking way!
-
-> GraphQL Editor is a GraphQL visualizer and designer. It allows you to create and display GraphQL schemas as a visual graph.
 
 <br />
 
@@ -52,7 +49,7 @@ GraphQLEditor makes it easier to understand GraphQL schemas. The Editor lets you
 
 ## How It Works
 
-Create GraphQL nodes and connect them to generate a database schema. You can also use builtin text IDE with GraphQL syntax validation.
+Create GraphQL nodes and connect them to generate a database schema. You can also use built-in text IDE with GraphQL syntax validation.
 
 <br />
 
@@ -75,7 +72,7 @@ Create GraphQL nodes and connect them to generate a database schema. You can als
 
 ## Installation
 
-To install, you need to add the below lines of code at the beginning:
+To install, you need to add the following lines of code:
 ```
 npm i -D worker-loader css-loader file-loader webpack
 ```
@@ -143,12 +140,12 @@ render(<App />, document.getElementById('root'));
 
 **GraphQLEditor**
 
-| property      | type                                                  | description                                                                            | required | default   |
+| Property      | Type                                                  | Description                                                                            | Required | Default   |
 | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------- | -------- | --------- |
 | schema        | `PassedSchema`                                        | value of the schema                                                                    | yes      |           |
-| setSchema     | `(props: PassedSchema, isInvalid?: boolean) => void;` | Function to be called when schema is set by the editor                                 | yes      |           |
+| setSchema     | `(props: PassedSchema, isInvalid?: boolean) => void;` | function to be called when schema is set by the editor                                 | yes      |           |
 | readonly      | `boolean`                                             | lock editing                                                                           | no       | false     |
-| diffSchemas   | `Record<string, string>`                              | Record containing graphql schemas with "name" as a key and graphql schema as a "value" | no       |           |
+| diffSchemas   | `Record<string, string>`                              | record containing graphql schemas with "name" as a key and graphql schema as a "value" | no       |           |
 | theme         | `EditorTheme`                                         | current theme                                                                          | --       | MainTheme |
 | routeState    | `EditorRoutes`                                        | listen to route changes. Don't bind it with routeState though!                         | no       |           |
 | onStateChange | `( r: EditorRoutes ) => void;`                        | on route state changed                                                                 | no       |           |
@@ -159,7 +156,7 @@ render(<App />, document.getElementById('root'));
 
 **PassedSchema**
 
-| property  | type     | description                    |
+| Property  | Type     | Description                    |
 | --------- | -------- | ------------------------------ |
 | code      | `string` | value of the schema code       |
 | libraries | `string` | value of the current libraries |
@@ -218,7 +215,7 @@ render(<App />, document.getElementById('root'));
 
 **GraphQLEditor**
 
-| property    | type                                                  | description                | required | default   |
+| Property    | Type                                                  | Description                | Required | Default   |
 | ----------- | ----------------------------------------------------- | -------------------------- | -------- | --------- |
 | schema      | `PassedSchema`                                        | value of the schema        | yes      |           |
 | gql         | `string`                                              | value of the gql           | yes      |           |
