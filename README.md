@@ -137,15 +137,14 @@ render(<App />, document.getElementById('root'));
 
 | Property      | Type                                                  | Description                                                                            | Required | Default   |
 | ------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------- | -------- | --------- |
-| schema        | `PassedSchema`                                        | value of the schema                                                                    | yes      |           |
-| setSchema     | `(props: PassedSchema, isInvalid?: boolean) => void;` | function to be called when schema is set by the editor                                 | yes      |           |
-| readonly      | `boolean`                                             | lock editing                                                                           | no       | false     |
-| diffSchemas   | `Record<string, string>`                              | record containing graphql schemas with "name" as a key and graphql schema as a "value" | no       |           |
-| theme         | `EditorTheme`                                         | current theme                                                                          | --       | MainTheme |
-| routeState    | `EditorRoutes`                                        | listen to route changes. Don't bind it with routeState though!                         | no       |           |
-| onStateChange | `( r: EditorRoutes ) => void;`                        | on route state changed                                                                 | no       |           |
-| onTreeChange  | `(tree: ParserTree) => void`                          | Function that could be fired if tree changes                                           | no       |           |
-| placeholder   | `string`                                              | placeholder - empty editor                                                             | no       |           |
+| schema        | `PassedSchema`                                        | the value of the schema that contains GraphQL code and libraries used by the editor; it's the main source of data for the editor | yes      |           |
+| setSchema     | `(props: PassedSchema, isInvalid?: boolean) => void;` | a function called when the schema is set by the Editor; it can also check if the schema is valid | yes      |           |
+| readonly      | `boolean`                                             | a function that locks the editor and makes it read-only, disabling any editing capabilities | no       | false     |
+| diffSchemas   | `Record<string, string>`                              | a record of GraphQL schemas where each schema is represented by a key-value pair with `name` being the key and `shema` being the schema's value | no       |           |
+| theme         | `EditorTheme`                                         | the current theme of the Editor - ie. colors, fonts, etc; allows customization within different themes | --       | MainTheme |
+| onRouteChange | `(r: EditorRoutes) => void;`                          | a function that handles route-related changes; **DISCLAIMER**: remember not to bind it with `routeState` as that will cause a 'maximum depth exceeded' error | no       |     |
+| onTreeChange  | `(tree: ParserTree) => void`                          | a function that can be called when there are changes in the GraphQL parser tree; it can be used to respond to changes in the schema | no       |           |
+| placeholder   | `string`                                              | placeholder text displayed when the editor is empty (no schema is loaded or present)            | no       |           |
 
 <br />
 
