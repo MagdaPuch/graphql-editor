@@ -31,7 +31,9 @@
 - [GraphQL Gql Editor](#graphql-gql-editor)
   - [Usage](#usage-1)
   - [GraphQLGqlEditor component props](#graphqlgqleditor-component-props)
-  - [GraphQL Embedded Readonly Editor](#graphql-embedded-readonly-editor)
+- [Embedded GraphQL Editor](#graphql-embedded-readonly-editor)
+  - [Usage](#usage-2)
+  - [Embedded GraphQL Editor Component Props](#Embedded-GraphQL-Editor-Component-Props)
 - [More Info](#MORE-INFO)
   - [Support](#support)
   - [Credits](#credits)
@@ -152,8 +154,11 @@ render(<App />, document.getElementById('root'));
 
 | Property  | Type     | Description                    |
 | --------- | -------- | ------------------------------ |
-| code      | `string` | value of the schema code       |
-| libraries | `string` | value of the current libraries |
+| code      | `string` | the GraphQL schema code itself; this is the main content of the schema being edited or viewed       |
+| libraries | `string` (optional) |  external libraries used with the schema |
+| source | `tree` / `code` / `outside` | indicates the origin of the schema change: <br /> - `tree` - means changes originated from the visual tree editor <br /> - `code` - means changes originated from manual code edits <br /> - `outside` -  indicates external updates (e.g., imported or loaded from outside the editor) | 
+| `passGraphValidation` | `boolean` | indicates whether the schema passes GraphQL validation; if set to true, it means the current schema is valid
+
 
 <br />
 
@@ -170,6 +175,8 @@ This property controls which specific view is active within the GraphQL editor's
 <br />
 
 ## GRAPHQL GQL EDITOR
+
+The GraphQLGqlEditor component provides a flexible editor for managing both a GraphQL schema and individual GraphQL queries or mutations. It has an optional read-only mode for presentations, custom themes and is fully customizable.
 
 ### Usage
 
@@ -217,20 +224,22 @@ render(<App />, document.getElementById('root'));
 
 | Property    | Type                                                  | Description                | Required | Default   |
 | ----------- | ----------------------------------------------------- | -------------------------- | -------- | --------- |
-| schema      | `PassedSchema`                                        | value of the schema        | yes      |           |
-| gql         | `string`                                              | value of the gql           | yes      |           |
-| placeholder | `string`                                              | placeholder - empty editor | no       | undefined |
-| setGql      | `(props: PassedSchema, isInvalid?: boolean) => void;` | set value of the gql       | yes      | undefined |
-| readonly    | `boolean`                                             | lock editing               | no       | false     |
-| theme       | `EditorTheme`                                         | current theme              | no       | MainTheme |
+| schema      | `PassedSchema`                                        | the code of the GraphQL schema | yes      |           |
+| gql         | `string`                                              | the GraphQL query or mutation to edit | yes      |           |
+| placeholder | `string`                                              | the stand-in text used in an empty editor | no       | undefined |
+| setGql      | `(gql: string) => void` | the function used to update the value of gql | yes      | -- |
+| readonly    | `boolean`                                             | if true, makes the editor read-only | no       | false     |
+| theme       | `EditorTheme`                                         | the current theme for the editor interface | no       | MainTheme |
 
 
 <br />
 
 
-### GraphQL Embedded Readonly Editor
+### Embedded GraphQL Editor
 
-The embedded editor can be used to view a schema and include it in your app. 
+The Embedded GraphQL Editor is designed for embedding a read-only view of a GraphQL schema into your application. This is ideal for cases where you don't want any schema modification, but instead, just want to display it along with error highlights and schema navigation features.
+
+### Usage
 
 ```tsx
 import React from 'react';
@@ -259,6 +268,15 @@ export const embeddedEditor = () => {
   );
 };
 ```
+
+<br />
+
+### Embedded GraphQL Editor Component Props
+
+| Property    | Type                                                  | Description                | Required |
+| ----------- | ----------------------------------------------------- | -------------------------- | -------- |
+| schema      | `PassedSchema`                                        | the schema to be rendered in the editor| yes      |
+| theme       | `MainTheme`                                           | the GraphQL Editor visual theme for the editor's user interface | no       |
 
 <br />
 
